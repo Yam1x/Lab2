@@ -6,11 +6,11 @@ IPAddress localAddr = IPAddress.Parse("127.0.0.1");
 TcpListener calcServer = new TcpListener(localAddr, serverPort);
 
 calcServer.Start();
+TcpClient client = calcServer.AcceptTcpClient();
+NetworkStream stream = client.GetStream();
 
 while (true)
 {
-    TcpClient client = calcServer.AcceptTcpClient();
-    NetworkStream stream = client.GetStream();
 
     Byte[] bytes = new Byte[256];
     string data = null;
@@ -30,7 +30,5 @@ while (true)
 
     var response = System.Text.Encoding.UTF8.GetBytes(processedText);
     stream.Write(response, 0, response.Length);
-
-    client.Close();
-    stream.Close();
 }
+

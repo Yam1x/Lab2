@@ -8,8 +8,8 @@ namespace Lab2
     {
         static void Main(string[] args)
         {
-            Int32 serverPort = 13371;
-            IPAddress localAddr = IPAddress.Parse("185.221.162.111");
+            Int32 serverPort = 13000;
+            IPAddress localAddr = IPAddress.Parse("127.0.0.1");
 
             TcpClient client = new TcpClient();
             client.Connect(localAddr, serverPort);

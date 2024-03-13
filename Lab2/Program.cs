@@ -10,7 +10,7 @@ namespace Lab2
         static void Main(string[] args)
         {
             Int32 serverPort = 13000;
-            IPAddress localAddr = IPAddress.Parse("127.0.0.1");
+            IPAddress localAddr = IPAddress.Parse("185.221.162.111");
             TcpListener calcServer = new TcpListener(localAddr, serverPort);
 
             calcServer.Start();
